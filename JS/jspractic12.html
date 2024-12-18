@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>123</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Салам</h1>
+    <div class="content">Контент, который можно скрыть или показать.</div>
+
+    <div class="buttons">
+        <button onclick="showMessage('Пример вызова функции showMessage')">Показать сообщение</button>
+        <button onclick="changeBackgroundColor('lightgreen')">Изменить цвет фона</button>
+        <button onclick="resetBackgroundColor()">Сбросить цвет фона</button>
+        <button onclick="toggleVisibility('.content')">Переключить видимость контента</button>
+        <button onclick="setH1FromUtmTerm()">Установить заголовок H1 из URL</button>
+        <button onclick="logCurrentTime()">Показать текущее время</button>
+    </div>
+</body>
+</html>

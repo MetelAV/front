@@ -1,0 +1,203 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #d4e6f3;  /* Очень светлый голубой оттенок */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.5s ease; /* Плавное изменение фона */
+}
+
+/* Заголовок */
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #3a5f7d; /* Нежный темно-синий */
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.2);
+}
+
+/* Параграф */
+p {
+    font-size: 1.125rem;
+    color: #4a7b9d; /* Мягкий голубой оттенок */
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.3s ease;
+    user-select: none;
+}
+
+p:hover {
+    background-color: #cfe3f3; /* Светлый голубой фон */
+    color: #2b4f6f; /* Более темный оттенок синего */
+}
+
+/* Кнопка "Показать лекции" */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #6a9bb4; /* Средний голубой оттенок */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background-color: #5a8a9b; /* Немного темнее голубой */
+    color: white;
+}
+
+
+.lectures {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #bca9e9;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #b07deb;
+}
+td{
+    background-color:#c79ff5;
+}
+/* Фотография */
+img {
+    max-width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: rotate(360deg);
+}
+
+/* Форма */
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 1px solid #d0e2f2; /* Очень светлый голубой для рамки */
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4a90e2; /* Ярко-голубой для фокуса */
+}
+
+button[type="submit"] {
+    background-color: #6a9bb4; /* Средний голубой оттенок */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a8a9b; /* Немного темнее голубой */
+}
+
+/* Сообщение после отправки формы */
+/* Сообщение после отправки формы */
+#form-message {
+    font-size: 1rem;
+    color: #6a9bb4;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 1s ease, color 1s ease;
+}
+
+#form-message.visible {
+    opacity: 1;
+    color: #4CAF50; /* Зеленый цвет текста после отправки */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Дополнительные стили для формы */
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 1px solid #d0e2f2;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #6a9bb4;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a8a9b;
+}
