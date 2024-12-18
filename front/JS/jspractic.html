@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объединенные задачи</title>
+</head>
+<body>
+    <h1>Заголовок H1</h1>
+    <h2>Заголовок H2</h2>
+    <p>Старый текст параграфа.</p>
+    <video src="assets/images/video.mp4" controls></video>
+
+    <!-- Кнопки для запуска задач -->
+    <button id="runScript">Изменить DOM</button>
+    <button id="runCycles">Выполнить циклы</button>
+    <button id="runArrays">Работа с массивами</button>
+    <button id="runObjectFilter">Фильтровать темы</button>
+    <button id="runGreeting">Приветствие</button>
+    <button id="runAgeCheck">Проверка возраста</button>
+    <button id="runGuessNumber">Угадай число</button>
+    <button id="runPasswordCheck">Проверка пароля</button>
+    <button id="runCalculator">Простой калькулятор</button>
+
+    <!-- Форма -->
+    <form id="myForm">
+        <label>
+            Имя: <input type="text" id="name" />
+        </label>
+        <br>
+        <label>
+            E-mail: <input type="email" id="email" />
+        </label>
+        <br>
+        <label>
+            Телефон: <input type="text" id="phone" />
+        </label>
+        <br>
+        <label>
+            Дата: <input type="date" id="date" />
+        </label>
+        <br>
+        <label>
+            Комментарий: <textarea id="comment"></textarea>
+        </label>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        // Часть 1: Работа с DOM
+        function modifyDOM() {
+            document.querySelector("h1").textContent = "Добро пожаловать на наш сайт!";
+            document.querySelector("h2").style.color = "red";
+            document.querySelector("p").textContent = "Это новый текст параграфа.";
+            document.querySelector("video").style.display = "none";
+            alert("Изменения DOM выполнены!");
+        }
+
+        // Часть 2: Циклы
+        function runCycles() {
+            for (let i = 1; i <= 10; i++) console.log(i);
+            let i = 10;
+            while (i >= 1) console.log(i--);
+            alert("Циклы выполнены! Результаты в консоли.");
+        }
+
+        // Часть 3: Работа с массивами
+        function runArrayTasks() {
+            const lectures = ['Тема 1', 'Тема 2', 'Тема 3'];
+            const practices = ['Практика 1', 'Практика 2', 'Практика 3'];
+            lectures.push('Тема 4');
+            practices.unshift('Практика 0');
+            console.log("Лекции:", lectures.join(", "));
+            console.log("Практики:", practices.join(", "));
+            alert("Работа с массивами завершена!");
+        }
+
+        // Часть 4: Приветствие
+        function runGreeting() {
+            const name = prompt("Введите ваше имя:");
+            const age = parseInt(prompt("Введите ваш возраст:"), 10);
+            alert(`Привет, ${name}! Вам ${age} лет.`);
+            console.log(`Привет, ${name}! Вам ${age} лет.`);
+        }
+
+        // Часть 5: Проверка возраста
+        function runAgeCheck() {
+            const age = parseInt(prompt("Введите ваш возраст:"), 10);
+            if (age >= 18) alert("Вы совершеннолетний.");
+            else alert("Вы несовершеннолетний.");
+        }
+
+        // Часть 6: Угадай число
+        function runGuessNumber() {
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+            const guess = parseInt(prompt("Угадайте число от 1 до 10:"), 10);
+            if (guess === randomNumber) alert("Поздравляем! Вы угадали число!");
+            else alert(`Вы не угадали. Случайное число: ${randomNumber}.`);
+        }
+
+        // Часть 7: Проверка пароля
+        function runPasswordCheck() {
+            const correctPassword = "12345";
+            const password = prompt("Введите пароль:");
+            if (!password) alert("Пароль не может быть пустым!");
+            else if (password === correctPassword) alert("Доступ разрешен.");
+            else alert("Доступ запрещен.");
+        }
+
+        // Часть 8: Простой калькулятор
+        function runCalculator() {
+            const num1 = parseFloat(prompt("Введите первое число:"));
+            const operator = prompt("Введите оператор (+, -, *, /):");
+            const num2 = parseFloat(prompt("Введите второе число:"));
+            let result;
+            if (operator === "+") result = num1 + num2;
+            else if (operator === "-") result = num1 - num2;
+            else if (operator === "*") result = num1 * num2;
+            else if (operator === "/") result = num1 / num2;
+            else alert("Неверный оператор!");
+            if (result !== undefined) alert(`Результат: ${result}`);
+        }
+
+        // Обработчики событий
+        document.querySelector("#runScript").addEventListener("click", modifyDOM);
+        document.querySelector("#runCycles").addEventListener("click", runCycles);
+        document.querySelector("#runArrays").addEventListener("click", runArrayTasks);
+        document.querySelector("#runObjectFilter").addEventListener("click", runArrayTasks);
+        document.querySelector("#runGreeting").addEventListener("click", runGreeting);
+        document.querySelector("#runAgeCheck").addEventListener("click", runAgeCheck);
+        document.querySelector("#runGuessNumber").addEventListener("click", runGuessNumber);
+        document.querySelector("#runPasswordCheck").addEventListener("click", runPasswordCheck);
+        document.querySelector("#runCalculator").addEventListener("click", runCalculator);
+        document.querySelector("#myForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Форма отправлена!");
+        });
+    </script>
+</body>
+</html>
